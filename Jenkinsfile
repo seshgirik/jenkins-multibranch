@@ -1,6 +1,6 @@
 node("master") {
 
-final REGITRY='registry.eng.hortonworks.com'
+final REGISTRY='registry.eng.hortonworks.com'
 
 final BRANCH='stage'
 final NAMESPACE='cdpe2e'
