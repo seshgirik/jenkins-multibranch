@@ -1,4 +1,4 @@
-node {
+node("master") {
 
 final REGITRY='registry.eng.hortonworks.com'
 
