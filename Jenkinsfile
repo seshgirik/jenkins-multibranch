@@ -1,6 +1,6 @@
-node {
+node("master") {
 
-final REGITRY='registry.eng.hortonworks.com'
+final REGISTRY='registry.eng.hortonworks.com'
 
 final BRANCH='stage'
 final NAMESPACE='cdpe2e'
@@ -12,7 +12,7 @@ def scmVars=checkout scm
 
 //To handle git tags
 
-branchName=scmVars.GIT_BRANCH.tokensize('/')[-1]
+branchName=scmVars.GIT_BRANCH.tokenize('/')[-1]
 
 }
 
