@@ -1,9 +1,9 @@
 node {
 
-final REGITRY='registry.eng.hortonworks.com"
+final REGITRY='registry.eng.hortonworks.com'
 
-final BRANCH="stage"
-final NAMESPACE="cdpe2e"
+final BRANCH='stage'
+final NAMESPACE='cdpe2e'
 final DEFAULT_TAG='latest'
 def tagName
 
