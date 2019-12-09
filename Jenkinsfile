@@ -11,6 +11,7 @@ stage('clone repo'){
 def scmVars=checkout scm
 
 //To handle git tags
+//To handle git tags
 
 branchName=scmVars.GIT_BRANCH.tokenize('/')[-1]
 
