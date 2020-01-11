@@ -1,30 +1,15 @@
-node("master") {
+def labels = [ 'master'] // labels for Jenkins node types we will build on
+def builders = [:]
+for (x in labels) {
+    def label = x // Need to bind the label variable before the closure - can't do 'for (label in labels)'
 
-final REGISTRY='registry.eng.hortonworks.com'
-
-final BRANCH='stage'
-final NAMESPACE='cdpe2e'
-final DEFAULT_TAG='latest'
-def tagName
-
-stage('clone repo'){
-def scmVars=checkout scm
-
-//To handle git tags
-//To handle git tags
-
-branchName=scmVars.GIT_BRANCH.tokenize('/')[-1]
-
+    // Create a map to pass in to the 'parallel' step so we can fire all the builds at once
+    builders[label] = {
+      node(label) {
+	// build steps that should happen on all nodes go here
+	sh "ls -ltr"
+      }
+    }
 }
 
-stage('build'){
-println "docker buiild -f .qaas/Dockerfile.system_test -t ${REGISTRY}/${NAMESPACE}/cdpmc-qe-${BRANCH}:${tagName} ."
-}
-
-stage('cleanup'){
-println "begin .. cleanpup"
-logstashSend failBuild: true, maxLines: 1000
-
-}
-
-}
+parallel builders
