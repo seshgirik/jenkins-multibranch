@@ -12,8 +12,10 @@ def scmVars=checkout scm
 
 //To handle git tags
 //To handle git tags
+println " scmVars ${scmVars} "
 
 branchName=scmVars.GIT_BRANCH.tokenize('/')[-1]
+println " branchName ${branchName} "
 
 }
 
