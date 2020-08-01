@@ -15,6 +15,7 @@ def scmVars=checkout scm
 
 branchName=scmVars.GIT_BRANCH.tokenize('/')[-1]
 
+
 }
 
 stage('build'){
