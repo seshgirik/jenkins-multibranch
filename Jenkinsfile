@@ -27,6 +27,7 @@ stage('cleanup'){
 println "begin .. cleanpup"
 println "begin .. cleanpup"
 println "begin .. cleanpup"
+println "begin .. cleanpup"
 
 logstashSend failBuild: true, maxLines: 1000
 
