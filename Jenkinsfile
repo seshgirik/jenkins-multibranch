@@ -26,6 +26,7 @@ println "docker buiild -f .qaas/Dockerfile.system_test -t ${REGISTRY}/${NAMESPAC
 stage('cleanup'){
 println "begin .. cleanpup"
 println "begin .. cleanpup"
+println "begin .. cleanpup"
 
 logstashSend failBuild: true, maxLines: 1000
 
